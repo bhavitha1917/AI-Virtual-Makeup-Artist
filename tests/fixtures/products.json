@@ -1,0 +1,269 @@
+{
+ "schema_version": "1.0",
+ "catalog_type": "test_fixture",
+ "notice": "Fictional test fixture.",
+ "products": [
+  {
+   "product_id": "fx-foundation-a",
+   "brand": "Fixture Brand",
+   "product_name": "Fx Foundation A",
+   "category": "foundation",
+   "finish": "matte",
+   "coverage": "medium",
+   "formulation": "liquid",
+   "base": "silicone",
+   "intended_use": [],
+   "price": null,
+   "currency": null,
+   "product_url": null,
+   "source": "Fictional test fixture - not product data.",
+   "verification_status": "demo",
+   "shade_ids": [
+    "fx-foundation-a-light-cool",
+    "fx-foundation-a-medium-warm",
+    "fx-foundation-a-medium-neutral",
+    "fx-foundation-a-tan-warm",
+    "fx-foundation-a-deep-cool",
+    "fx-foundation-a-medium-none"
+   ]
+  },
+  {
+   "product_id": "fx-foundation-b",
+   "brand": "Fixture Brand",
+   "product_name": "Fx Foundation B",
+   "category": "foundation",
+   "finish": "dewy",
+   "coverage": "sheer",
+   "formulation": "liquid",
+   "base": "water",
+   "intended_use": [],
+   "price": null,
+   "currency": null,
+   "product_url": null,
+   "source": "Fictional test fixture - not product data.",
+   "verification_status": "demo",
+   "shade_ids": [
+    "fx-foundation-b-medium-cool",
+    "fx-foundation-b-light-warm"
+   ]
+  },
+  {
+   "product_id": "fx-foundation-c",
+   "brand": "Fixture Brand",
+   "product_name": "Fx Foundation C",
+   "category": "foundation",
+   "finish": "natural",
+   "coverage": "light",
+   "formulation": "liquid",
+   "base": null,
+   "intended_use": [],
+   "price": null,
+   "currency": null,
+   "product_url": null,
+   "source": "Fictional test fixture - not product data.",
+   "verification_status": "unverified",
+   "shade_ids": [
+    "fx-foundation-c-medium-neutral"
+   ]
+  },
+  {
+   "product_id": "fx-concealer-bright",
+   "brand": "Fixture Brand",
+   "product_name": "Fx Concealer Bright",
+   "category": "concealer",
+   "finish": "radiant",
+   "coverage": "medium",
+   "formulation": "liquid",
+   "base": "water",
+   "intended_use": [
+    "brightening"
+   ],
+   "price": null,
+   "currency": null,
+   "product_url": null,
+   "source": "Fictional test fixture - not product data.",
+   "verification_status": "demo",
+   "shade_ids": [
+    "fx-concealer-bright-light-warm",
+    "fx-concealer-bright-medium-warm",
+    "fx-concealer-bright-tan-warm"
+   ]
+  },
+  {
+   "product_id": "fx-concealer-spot",
+   "brand": "Fixture Brand",
+   "product_name": "Fx Concealer Spot",
+   "category": "concealer",
+   "finish": "matte",
+   "coverage": "full",
+   "formulation": "cream",
+   "base": "silicone",
+   "intended_use": [
+    "spot"
+   ],
+   "price": null,
+   "currency": null,
+   "product_url": null,
+   "source": "Fictional test fixture - not product data.",
+   "verification_status": "demo",
+   "shade_ids": [
+    "fx-concealer-spot-medium-neutral",
+    "fx-concealer-spot-tan-neutral"
+   ]
+  },
+  {
+   "product_id": "fx-corrector",
+   "brand": "Fixture Brand",
+   "product_name": "Fx Corrector",
+   "category": "color_corrector",
+   "finish": "natural",
+   "coverage": "medium",
+   "formulation": "cream",
+   "base": null,
+   "intended_use": [],
+   "price": null,
+   "currency": null,
+   "product_url": null,
+   "source": "Fictional test fixture - not product data.",
+   "verification_status": "demo",
+   "shade_ids": [
+    "fx-corrector-peach",
+    "fx-corrector-orange",
+    "fx-corrector-green"
+   ]
+  },
+  {
+   "product_id": "fx-lipstick",
+   "brand": "Fixture Brand",
+   "product_name": "Fx Lipstick",
+   "category": "lipstick",
+   "finish": "matte",
+   "coverage": null,
+   "formulation": "stick",
+   "base": null,
+   "intended_use": [],
+   "price": null,
+   "currency": null,
+   "product_url": null,
+   "source": "Fictional test fixture - not product data.",
+   "verification_status": "demo",
+   "shade_ids": [
+    "fx-lipstick-red",
+    "fx-lipstick-nude",
+    "fx-lipstick-rose",
+    "fx-lipstick-unlabelled"
+   ]
+  },
+  {
+   "product_id": "fx-blush-powder",
+   "brand": "Fixture Brand",
+   "product_name": "Fx Blush Powder",
+   "category": "blush",
+   "finish": "satin",
+   "coverage": null,
+   "formulation": "powder",
+   "base": null,
+   "intended_use": [],
+   "price": null,
+   "currency": null,
+   "product_url": null,
+   "source": "Fictional test fixture - not product data.",
+   "verification_status": "demo",
+   "shade_ids": [
+    "fx-blush-powder-peach",
+    "fx-blush-powder-berry"
+   ]
+  },
+  {
+   "product_id": "fx-blush-cream",
+   "brand": "Fixture Brand",
+   "product_name": "Fx Blush Cream",
+   "category": "blush",
+   "finish": "dewy",
+   "coverage": null,
+   "formulation": "cream",
+   "base": null,
+   "intended_use": [],
+   "price": null,
+   "currency": null,
+   "product_url": null,
+   "source": "Fictional test fixture - not product data.",
+   "verification_status": "demo",
+   "shade_ids": [
+    "fx-blush-cream-rose"
+   ]
+  },
+  {
+   "product_id": "fx-liner-liquid",
+   "brand": "Fixture Brand",
+   "product_name": "Fx Liner Liquid",
+   "category": "eyeliner",
+   "finish": "matte",
+   "coverage": null,
+   "formulation": "liquid",
+   "base": null,
+   "intended_use": [],
+   "price": null,
+   "currency": null,
+   "product_url": null,
+   "source": "Fictional test fixture - not product data.",
+   "verification_status": "demo",
+   "shade_ids": [
+    "fx-liner-liquid-black"
+   ]
+  },
+  {
+   "product_id": "fx-liner-pencil",
+   "brand": "Fixture Brand",
+   "product_name": "Fx Liner Pencil",
+   "category": "eyeliner",
+   "finish": "matte",
+   "coverage": null,
+   "formulation": "pencil",
+   "base": null,
+   "intended_use": [],
+   "price": null,
+   "currency": null,
+   "product_url": null,
+   "source": "Fictional test fixture - not product data.",
+   "verification_status": "demo",
+   "shade_ids": [
+    "fx-liner-pencil-brown"
+   ]
+  },
+  {
+   "product_id": "fx-primer-silicone",
+   "brand": "Fixture Brand",
+   "product_name": "Fx Primer Silicone",
+   "category": "primer",
+   "finish": "matte",
+   "coverage": null,
+   "formulation": "gel",
+   "base": "silicone",
+   "intended_use": [],
+   "price": null,
+   "currency": null,
+   "product_url": null,
+   "source": "Fictional test fixture - not product data.",
+   "verification_status": "demo",
+   "shade_ids": []
+  },
+  {
+   "product_id": "fx-powder",
+   "brand": "Fixture Brand",
+   "product_name": "Fx Powder",
+   "category": "powder",
+   "finish": "matte",
+   "coverage": null,
+   "formulation": "powder",
+   "base": null,
+   "intended_use": [],
+   "price": null,
+   "currency": null,
+   "product_url": null,
+   "source": "Fictional test fixture - not product data.",
+   "verification_status": "demo",
+   "shade_ids": []
+  }
+ ]
+}

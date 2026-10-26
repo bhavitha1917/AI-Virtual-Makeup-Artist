@@ -1,0 +1,265 @@
+/* The Beauty Studio — shared design system for custom components.
+   Native widget colours and fonts come from .streamlit/config.toml.
+   Contrast (WCAG 2.1): plum on ivory 13.7:1; text-gray on ivory 5.2:1; white on mauve 4.9:1.
+   Dusty rose is decorative only (never used for text). */
+
+:root {
+  --bs-ivory: #FFF9F6;
+  --bs-card: #FFFFFF;
+  --bs-rose: #C9828E;
+  --bs-mauve: #8F6579;
+  --bs-plum: #352630;
+  --bs-gray: #81747A;        /* large / decorative only */
+  --bs-gray-text: #74676D;   /* small secondary text (AA) */
+  --bs-blush: #F0E1E2;
+  --bs-blush-soft: #FBF1F0;
+  --bs-ok: #2F6B4F;
+  --bs-ok-bg: #EEF6F1;
+  --bs-warn: #8A5A14;
+  --bs-warn-bg: #FBF3E6;
+  --bs-fail: #9B2C3B;
+  --bs-fail-bg: #FBECEE;
+  --bs-radius: 14px;
+  --bs-radius-sm: 8px;
+  --bs-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --bs-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Only internal selector in the project: caps the content width on large screens.
+   If Streamlit renames it, the layout simply becomes full width. */
+[data-testid="stMainBlockContainer"] { max-width: 1180px; }
+
+/* ------------------------------------------------------------------ typography */
+.bs-eyebrow {
+  font-family: var(--bs-sans); font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--bs-mauve); margin: 0 0 0.6rem;
+}
+.bs-h1 {
+  font-family: var(--bs-serif); font-weight: 600; color: var(--bs-plum);
+  font-size: clamp(2rem, 4.2vw, 3rem); line-height: 1.12; margin: 0 0 1rem;
+}
+.bs-h2 {
+  font-family: var(--bs-serif); font-weight: 600; color: var(--bs-plum);
+  font-size: clamp(1.45rem, 2.4vw, 1.8rem); line-height: 1.2; margin: 0 0 0.4rem;
+}
+.bs-h3 { font-family: var(--bs-serif); font-weight: 600; color: var(--bs-plum); font-size: 1.15rem; margin: 0 0 0.35rem; }
+.bs-lead { font-family: var(--bs-sans); color: var(--bs-gray-text); font-size: 1.04rem; line-height: 1.65; margin: 0; max-width: 40rem; }
+.bs-muted { color: var(--bs-gray-text); font-size: 0.9rem; line-height: 1.55; }
+.bs-small { color: var(--bs-gray-text); font-size: 0.8rem; line-height: 1.5; }
+.bs-rule { width: 48px; height: 2px; background: var(--bs-rose); border: 0; margin: 0.9rem 0 1.1rem; }
+
+/* ------------------------------------------------------------------ layout blocks */
+.bs-page-header { margin: 0 0 1.6rem; }
+.bs-section { margin: 2.6rem 0 1rem; }
+.bs-card {
+  background: var(--bs-card); border: 1px solid var(--bs-blush); border-radius: var(--bs-radius);
+  padding: 1.4rem 1.5rem; height: 100%; box-sizing: border-box;
+}
+.bs-card p { margin: 0 0 0.5rem; }
+.bs-card ul { margin: 0.3rem 0 0; padding-left: 1.1rem; }
+.bs-card li { margin: 0.2rem 0; color: var(--bs-plum); font-size: 0.92rem; line-height: 1.5; }
+
+/* Streamlit containers given a key starting with "bs-card" become white cards. */
+[class*="st-key-bs-card"] {
+  background: var(--bs-card); border: 1px solid var(--bs-blush); border-radius: var(--bs-radius);
+  padding: 1.25rem 1.35rem;
+}
+
+/* ------------------------------------------------------------------ hero */
+.bs-hero {
+  display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 2.5rem;
+  align-items: center; padding: 0.6rem 0 1.4rem;
+}
+.bs-hero-art {
+  background: var(--bs-card); border: 1px solid var(--bs-blush); border-radius: 22px;
+  padding: 2rem; display: grid; gap: 1.1rem;
+}
+.bs-swatch-row { display: flex; gap: 0.7rem; flex-wrap: wrap; }
+.bs-swatch-dot { width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(53, 38, 48, 0.08); }
+.bs-hero-caption { font-size: 0.8rem; color: var(--bs-gray-text); margin: 0; }
+
+/* ------------------------------------------------------------------ feature + step cards */
+.bs-feature-card h3 { margin-top: 0.2rem; }
+.bs-kicker { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bs-mauve); }
+.bs-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; }
+.bs-step-num {
+  width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--bs-rose);
+  color: var(--bs-mauve); font-family: var(--bs-serif); font-weight: 600;
+  display: inline-flex; align-items: center; justify-content: center; margin-bottom: 0.7rem;
+}
+.bs-trust { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; }
+
+/* ------------------------------------------------------------------ badges & chips */
+.bs-badge {
+  display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em;
+  padding: 0.18rem 0.6rem; border-radius: 999px; border: 1px solid transparent; white-space: nowrap;
+}
+.bs-badge-ok { color: var(--bs-ok); background: var(--bs-ok-bg); border-color: #CFE5D8; }
+.bs-badge-warn { color: var(--bs-warn); background: var(--bs-warn-bg); border-color: #EFDDBD; }
+.bs-badge-fail { color: var(--bs-fail); background: var(--bs-fail-bg); border-color: #F0CDD3; }
+.bs-badge-info { color: var(--bs-mauve); background: var(--bs-blush-soft); border-color: var(--bs-blush); }
+.bs-badge-neutral { color: var(--bs-gray-text); background: #F6F2F1; border-color: #E9E2E1; }
+.bs-chip {
+  display: inline-block; font-size: 0.76rem; color: var(--bs-plum); background: var(--bs-blush-soft);
+  border: 1px solid var(--bs-blush); border-radius: 999px; padding: 0.12rem 0.55rem; margin: 0 0.3rem 0.3rem 0;
+}
+
+/* ------------------------------------------------------------------ notices & states */
+.bs-notice {
+  background: var(--bs-card); border: 1px solid var(--bs-blush); border-left: 3px solid var(--bs-rose);
+  border-radius: var(--bs-radius-sm); padding: 0.85rem 1rem; margin: 0.4rem 0 1rem;
+  color: var(--bs-plum); font-size: 0.9rem; line-height: 1.55;
+}
+.bs-notice strong { font-weight: 600; }
+.bs-notice-warn { border-left-color: #C99A4B; }
+.bs-notice-error { border-left-color: var(--bs-fail); }
+.bs-empty {
+  text-align: center; background: var(--bs-card); border: 1px dashed var(--bs-blush);
+  border-radius: var(--bs-radius); padding: 2.2rem 1.4rem; margin: 0.6rem 0 1rem;
+}
+.bs-empty .bs-h3 { margin-bottom: 0.4rem; }
+.bs-empty p { color: var(--bs-gray-text); margin: 0 auto; max-width: 34rem; font-size: 0.92rem; line-height: 1.55; }
+
+/* ------------------------------------------------------------------ analysis results */
+.bs-quality { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 0.6rem; margin: 0.2rem 0 0.4rem; }
+.bs-quality-item {
+  background: var(--bs-card); border: 1px solid var(--bs-blush); border-radius: var(--bs-radius-sm);
+  padding: 0.65rem 0.8rem; font-size: 0.84rem; color: var(--bs-plum); line-height: 1.45;
+}
+.bs-quality-item .bs-badge { margin-bottom: 0.35rem; }
+.bs-feature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.8rem; }
+.bs-feature {
+  background: var(--bs-card); border: 1px solid var(--bs-blush); border-radius: var(--bs-radius);
+  padding: 1rem 1.05rem;
+}
+.bs-feature-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bs-gray-text); }
+.bs-feature-value { font-family: var(--bs-serif); font-size: 1.3rem; color: var(--bs-plum); margin: 0.25rem 0 0.4rem; text-transform: capitalize; }
+.bs-feature-value.bs-unset { font-family: var(--bs-sans); font-size: 0.95rem; color: var(--bs-gray-text); text-transform: none; }
+.bs-feature p { font-size: 0.8rem; color: var(--bs-gray-text); margin: 0.35rem 0 0; line-height: 1.45; }
+
+/* ------------------------------------------------------------------ product cards */
+.bs-product {
+  background: var(--bs-card); border: 1px solid var(--bs-blush); border-radius: var(--bs-radius);
+  padding: 1.15rem 1.2rem 1rem; height: 100%; box-sizing: border-box;
+}
+.bs-product-head { display: flex; gap: 0.85rem; align-items: center; margin-bottom: 0.7rem; }
+.bs-product-swatch { flex: 0 0 auto; width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(53, 38, 48, 0.1); }
+.bs-product-swatch.bs-none { background: repeating-linear-gradient(45deg, #F6F2F1, #F6F2F1 4px, #FFFFFF 4px, #FFFFFF 8px); }
+.bs-product-brand { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bs-gray-text); }
+.bs-product-name { font-family: var(--bs-serif); font-size: 1.05rem; color: var(--bs-plum); line-height: 1.25; }
+.bs-product-shade { font-size: 0.86rem; color: var(--bs-plum); font-weight: 500; }
+.bs-product-fit { display: flex; justify-content: space-between; align-items: center; margin: 0.5rem 0 0.4rem; gap: 0.4rem; flex-wrap: wrap; }
+.bs-product ul { margin: 0.35rem 0 0.4rem; padding-left: 1.05rem; }
+.bs-product li { font-size: 0.83rem; line-height: 1.45; color: var(--bs-plum); margin: 0.15rem 0; }
+.bs-product .bs-caveats { border-top: 1px solid var(--bs-blush); margin-top: 0.6rem; padding-top: 0.5rem; }
+.bs-product .bs-caveats p { font-size: 0.76rem; color: var(--bs-gray-text); margin: 0.15rem 0; line-height: 1.4; }
+
+/* ------------------------------------------------------------------ routine */
+.bs-routine-step {
+  display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 1rem;
+  background: var(--bs-card); border: 1px solid var(--bs-blush); border-radius: var(--bs-radius);
+  padding: 1.1rem 1.2rem; margin: 0 0 0.8rem;
+}
+.bs-routine-num {
+  width: 40px; height: 40px; border-radius: 50%; background: var(--bs-mauve); color: #FFFFFF;
+  display: flex; align-items: center; justify-content: center; font-family: var(--bs-serif); font-weight: 600; font-size: 1.05rem;
+}
+.bs-routine-title { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.bs-routine-product { font-size: 0.9rem; font-weight: 600; color: var(--bs-plum); margin: 0.15rem 0 0.4rem; }
+.bs-routine-step p { margin: 0.3rem 0; font-size: 0.9rem; line-height: 1.55; color: var(--bs-plum); }
+.bs-routine-step .bs-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bs-gray-text); margin-top: 0.6rem; }
+.bs-routine-step ul { margin: 0.2rem 0; padding-left: 1.1rem; }
+.bs-routine-step li { font-size: 0.88rem; line-height: 1.5; color: var(--bs-plum); }
+.bs-inventory-item { font-size: 0.92rem; color: var(--bs-plum); line-height: 1.4; }
+.bs-inventory-item .bs-small { display: block; }
+
+/* ------------------------------------------------------------------ footer */
+.bs-footer {
+  border-top: 1px solid var(--bs-blush); margin-top: 3.2rem; padding: 1.4rem 0 0.4rem;
+  display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;
+}
+.bs-footer p { margin: 0.15rem 0; font-size: 0.8rem; color: var(--bs-gray-text); max-width: 36rem; line-height: 1.5; }
+.bs-footer .bs-footer-brand { font-family: var(--bs-serif); font-size: 1rem; color: var(--bs-plum); }
+
+/* ------------------------------------------------------------------ responsive */
+@media (max-width: 900px) {
+  .bs-hero { grid-template-columns: minmax(0, 1fr); gap: 1.4rem; }
+  .bs-steps, .bs-trust { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  [data-testid="stMainBlockContainer"] { padding-left: 1rem; padding-right: 1rem; }
+  .bs-card, .bs-product { padding: 1rem; }
+  .bs-routine-step { grid-template-columns: 36px minmax(0, 1fr); gap: 0.7rem; padding: 0.9rem; }
+  .bs-routine-num { width: 32px; height: 32px; font-size: 0.95rem; }
+  .bs-hero-art { padding: 1.3rem; }
+}
+
+/* ------------------------------------------------------------------ welcome */
+/* Full-viewport photo (assets/welcome_beauty_studio.png; src/ui/pages/welcome.py injects it as
+   this element's background-image). The photo has the brand copy painted into it, so a frosted
+   cream panel is anchored exactly over that copy and the live text sits on the panel.
+   --bs-wimg/--bs-himg: rendered photo size under background-size: cover (1672×941);
+   --bs-wx: horizontal background-position; --bs-cx/--bs-cy: centre of the painted copy. */
+.stApp:has(.st-key-bs-welcome) {
+  --bs-wimg: max(100vw, 177.68vh);
+  --bs-himg: max(100vh, 56.28vw);
+  --bs-wx: 0.5;
+  --bs-cx: calc(var(--bs-wx) * (100vw - var(--bs-wimg)) + 0.496 * var(--bs-wimg));
+  --bs-cy: calc(0.5 * (100vh - var(--bs-himg)) + 0.473 * var(--bs-himg));
+  --bs-glow: 247, 226, 209;
+  background-color: var(--bs-ivory);
+  background-size: cover;
+  background-position: calc(var(--bs-wx) * 100%) 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.stApp:has(.st-key-bs-welcome) [data-testid="stHeader"] { background: transparent; }
+.st-key-bs-welcome {
+  position: fixed; inset: 0; z-index: 1; overflow-y: auto;
+  justify-content: center; align-items: center; text-align: center;
+  padding: 4rem 1.5rem 3rem; gap: 0;
+}
+.st-key-bs-welcome::before {
+  content: ""; position: fixed; z-index: -1;
+  width: calc(0.35 * var(--bs-wimg)); height: calc(0.58 * var(--bs-himg));
+  left: calc(var(--bs-cx) - 0.175 * var(--bs-wimg)); top: calc(var(--bs-cy) - 0.29 * var(--bs-himg));
+  border-radius: 28px; background: rgba(var(--bs-glow), 0.82);
+  -webkit-backdrop-filter: blur(26px) saturate(1.05); backdrop-filter: blur(26px) saturate(1.05);
+  border: 1px solid rgba(255, 255, 255, 0.55); box-shadow: 0 24px 60px rgba(53, 38, 48, 0.10);
+}
+.st-key-bs-welcome [data-testid="stElementContainer"] { width: auto; max-width: 100%; }
+.bs-welcome-brand {
+  font-family: var(--bs-serif); font-weight: 500; color: var(--bs-plum); text-transform: uppercase;
+  font-size: clamp(2.6rem, calc(0.052 * var(--bs-wimg)), 6rem); line-height: 1.02;
+  letter-spacing: 0.01em; margin: 0; padding: 0;
+}
+.bs-welcome-brand span { display: block; }
+.bs-welcome-brand .bs-welcome-the { font-size: 0.36em; letter-spacing: 0.42em; margin: 0 0 0.45em 0.42em; }
+.bs-welcome-divider { display: flex; align-items: center; justify-content: center; gap: 0.7rem; margin: 1.5rem 0 1.3rem; }
+.bs-welcome-divider span { width: 4.5rem; height: 1px; background: var(--bs-rose); }
+.bs-welcome-divider i { width: 0.45rem; height: 0.45rem; background: var(--bs-rose); transform: rotate(45deg); }
+.bs-welcome-tagline {
+  font-family: var(--bs-sans); color: var(--bs-plum); margin: 0 0 2rem;
+  font-size: clamp(1.05rem, 1.5vw, 1.35rem); letter-spacing: 0.01em;
+}
+.st-key-bs_enter button {
+  min-height: 3.3rem; padding: 0.75rem 2.6rem; border-radius: 12px;
+  font-family: var(--bs-sans); font-size: 1.05rem; font-weight: 500;
+  box-shadow: 0 6px 18px rgba(53, 38, 48, 0.18);
+}
+/* Portrait screens: shift the photo so the face stays in view; copy sits on a cream fade below it. */
+@media (max-aspect-ratio: 1/1) {
+  .stApp:has(.st-key-bs-welcome) { --bs-wx: 0.9; }
+  /* No panel: fade out whatever painted copy remains left of the face, plus a fade under the text. */
+  .st-key-bs-welcome::before { display: none; }
+  .st-key-bs-welcome {
+    --bs-copy-right: calc(var(--bs-wx) * (100vw - var(--bs-wimg)) + 0.67 * var(--bs-wimg));
+    background-image:
+      linear-gradient(to bottom, rgba(var(--bs-glow), 0) 44%, rgba(var(--bs-glow), 0.93) 60%, rgba(var(--bs-glow), 0.97) 100%),
+      linear-gradient(to right, rgb(var(--bs-glow)) var(--bs-copy-right), rgba(var(--bs-glow), 0) calc(var(--bs-copy-right) + 3rem));
+  }
+  .st-key-bs-welcome { justify-content: flex-end; padding-bottom: 2.5rem; }
+  .bs-welcome-brand { font-size: clamp(2.3rem, 12vw, 4.6rem); }
+  .bs-welcome-divider { margin: 1rem 0 0.9rem; }
+  .bs-welcome-tagline { font-size: clamp(1rem, 4.2vw, 1.3rem); margin-bottom: 1.4rem; }
+}

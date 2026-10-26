@@ -1,0 +1,9 @@
+# Runtime dependencies — verified together on Python 3.11.9 (Windows) with `pip check`.
+streamlit==1.66.1
+mediapipe==1.1.1
+# MediaPipe depends on opencv-contrib-python; pinned explicitly because the app imports cv2.
+# Do not also install opencv-python(-headless): multiple cv2 distributions conflict.
+opencv-contrib-python==5.0.0.93
+numpy==2.4.6
+scikit-learn==1.9.1
+pillow==13.0.0

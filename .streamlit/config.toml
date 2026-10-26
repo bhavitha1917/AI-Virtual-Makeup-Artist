@@ -1,0 +1,25 @@
+[server]
+maxUploadSize = 10
+enableXsrfProtection = true
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
+showErrorDetails = "none"
+
+[theme]
+base = "light"
+primaryColor = "#8F6579"
+backgroundColor = "#FFF9F6"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#352630"
+linkColor = "#8F6579"
+borderColor = "#F0E1E2"
+showWidgetBorder = true
+baseRadius = "0.6rem"
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap, sans-serif"
+headingFont = "Playfair Display:https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap, Georgia, serif"
+headingFontSizes = ["2.3rem", "1.7rem", "1.3rem", "1.1rem", "1rem", "0.9rem"]
+headingFontWeights = [600, 600, 600, 600, 600, 600]

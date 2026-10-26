@@ -1,0 +1,282 @@
+{
+  "schema_version": "1.0",
+  "notice": "General cosmetic application guidance written for this project. Makeup preferences are subjective; feature-based tips describe common techniques, not rules. No medical claims.",
+  "looks": {
+    "everyday": {"label": "Everyday", "description": "Light, quick and comfortable for daily wear."},
+    "office": {"label": "Office", "description": "Polished and understated, built to last through the workday."},
+    "festive": {"label": "Festive", "description": "Brighter colour and a little shine for celebrations."},
+    "glam": {"label": "Glam", "description": "Full, defined and long-wearing for evenings and events."}
+  },
+  "general_cautions": [
+    "Patch-test new products on a small area first and stop using anything that irritates.",
+    "Apply makeup with clean hands and tools, and do not share eye or lip products."
+  ],
+  "steps": [
+    {
+      "step_id": "skin_prep", "category": "skin_prep", "title": "Prepare the skin", "sequence": 10,
+      "purpose": "Creates a comfortable, even surface so the products that follow apply smoothly.",
+      "looks": ["everyday", "office", "festive", "glam"], "optional_in_looks": [],
+      "techniques": {
+        "default": "Apply a small amount to clean skin and let it absorb for about a minute before continuing.",
+        "cream": "Warm a pea-sized amount between your fingertips and press it into clean skin; wait about a minute before the next step.",
+        "liquid": "Smooth a few drops over clean skin and allow it to absorb before the next step."
+      },
+      "cautions": []
+    },
+    {
+      "step_id": "primer", "category": "primer", "title": "Prime", "sequence": 20,
+      "purpose": "Helps makeup grip and last, and can smooth texture or add glow depending on the formula.",
+      "looks": ["everyday", "office", "festive", "glam"], "optional_in_looks": ["everyday"],
+      "techniques": {
+        "default": "Apply a thin layer where you want makeup to last longest, usually the centre of the face, and let it set briefly.",
+        "gel": "Press a thin layer onto areas with visible texture or pores, using patting rather than rubbing motions.",
+        "liquid": "Smooth a thin layer over the face with your fingertips and let it set for a minute."
+      },
+      "cautions": []
+    },
+    {
+      "step_id": "color_corrector", "category": "color_corrector", "title": "Colour-correct (where needed)", "sequence": 30,
+      "purpose": "Neutralises localised discolouration such as under-eye darkness or redness before complexion products.",
+      "looks": ["everyday", "office", "festive", "glam"], "optional_in_looks": ["everyday", "office", "festive", "glam"],
+      "techniques": {
+        "default": "Tap a very small amount only onto the areas you want to neutralise and blend the edges.",
+        "cream": "Warm a tiny amount on your fingertip and tap it onto the area; blend the edges softly.",
+        "stick": "Dot the stick directly onto the area and tap with a fingertip or small brush to blend."
+      },
+      "cautions": ["Use a thin layer; too much corrector can show through the products on top."]
+    },
+    {
+      "step_id": "foundation", "category": "foundation", "title": "Even the complexion", "sequence": 40,
+      "purpose": "Evens out skin tone with the level of coverage you prefer.",
+      "looks": ["everyday", "office", "festive", "glam"], "optional_in_looks": [],
+      "techniques": {
+        "default": "Start with a small amount at the centre of the face and blend outward, adding more only where needed.",
+        "liquid": "Dot a small amount on the forehead, cheeks and chin, then blend outward with a damp sponge or brush.",
+        "stick": "Swipe a little onto the centre of the face and blend outward with a dense brush or damp sponge.",
+        "cream": "Warm the product on the back of your hand and press it on with a brush or sponge.",
+        "powder": "Swirl a brush in the powder, tap off excess and buff onto the skin in circular motions."
+      },
+      "cautions": []
+    },
+    {
+      "step_id": "concealer", "category": "concealer", "title": "Conceal", "sequence": 50,
+      "purpose": "Adds targeted coverage or brightness where you want it.",
+      "looks": ["everyday", "office", "festive", "glam"], "optional_in_looks": [],
+      "techniques": {
+        "default": "Apply a small amount only where needed and tap the edges to blend.",
+        "liquid": "Dot a little where needed, wait a few seconds, then tap to blend with a fingertip or sponge.",
+        "cream": "Pick up a small amount with a fine brush, press it onto the spot and tap only the edges to blend."
+      },
+      "cautions": []
+    },
+    {
+      "step_id": "bronzer", "category": "bronzer", "title": "Add warmth", "sequence": 60,
+      "purpose": "Adds warmth and soft dimension to the face.",
+      "looks": ["everyday", "office", "festive", "glam"], "optional_in_looks": ["everyday", "office"],
+      "techniques": {
+        "default": "Use a light hand and build gradually where light would naturally hit.",
+        "powder": "Tap off excess from a fluffy brush and sweep lightly in light layers.",
+        "cream": "Tap a small amount on with fingertips or a sponge and blend the edges before it sets."
+      },
+      "cautions": []
+    },
+    {
+      "step_id": "blush", "category": "blush", "title": "Add colour to the cheeks", "sequence": 65,
+      "purpose": "Brings colour and life back to the face after complexion products.",
+      "looks": ["everyday", "office", "festive", "glam"], "optional_in_looks": [],
+      "techniques": {
+        "default": "Apply a little to the cheeks and blend the edges so there is no visible line.",
+        "powder": "Tap off excess from the brush and sweep lightly, building colour gradually.",
+        "cream": "Tap a small amount on with fingertips and blend outward before it sets.",
+        "stick": "Dab the stick onto the cheek in two or three dots and blend with fingertips."
+      },
+      "cautions": []
+    },
+    {
+      "step_id": "highlighter", "category": "highlighter", "title": "Highlight", "sequence": 70,
+      "purpose": "Reflects light on the high points of the face.",
+      "looks": ["everyday", "office", "festive", "glam"], "optional_in_looks": ["everyday", "office"],
+      "techniques": {
+        "default": "Apply to the high points of the face: tops of the cheekbones, brow bone and bridge of the nose.",
+        "liquid": "Tap one small drop onto the tops of the cheekbones and blend the edges with a fingertip.",
+        "powder": "Use a small fan or tapered brush and sweep lightly across the tops of the cheekbones."
+      },
+      "cautions": []
+    },
+    {
+      "step_id": "powder", "category": "powder", "title": "Set", "sequence": 80,
+      "purpose": "Sets cream and liquid products to reduce shine and creasing.",
+      "looks": ["everyday", "office", "festive", "glam"], "optional_in_looks": ["everyday"],
+      "techniques": {
+        "default": "Press a light layer onto areas that crease or get shiny, such as under the eyes and the T-zone.",
+        "powder": "Tap excess off a puff or brush and press lightly where you need it; avoid dragging over liquid products."
+      },
+      "cautions": []
+    },
+    {
+      "step_id": "eyebrow", "category": "eyebrow", "title": "Define the brows", "sequence": 90,
+      "purpose": "Frames the eyes and fills sparse areas.",
+      "looks": ["everyday", "office", "festive", "glam"], "optional_in_looks": [],
+      "techniques": {
+        "default": "Brush the brows up, then fill sparse areas with light strokes following hair direction.",
+        "pencil": "Use short, hair-like strokes in sparse areas, then brush through with a spoolie to soften.",
+        "gel": "Brush upward and outward through the brows to set them in place."
+      },
+      "cautions": []
+    },
+    {
+      "step_id": "eyeshadow", "category": "eyeshadow", "title": "Shape the eyes", "sequence": 100,
+      "purpose": "Adds depth and colour to the eyes.",
+      "looks": ["everyday", "office", "festive", "glam"], "optional_in_looks": [],
+      "techniques": {
+        "default": "Apply a medium shade across the lid, a deeper shade in the outer corner, and blend all edges.",
+        "powder": "Tap off excess, press colour onto the lid and blend the edges with a clean fluffy brush.",
+        "stick": "Swipe across the lid close to the lashes and blend upward with a fingertip before it sets."
+      },
+      "cautions": []
+    },
+    {
+      "step_id": "eyeliner", "category": "eyeliner", "title": "Line the eyes", "sequence": 110,
+      "purpose": "Defines the lash line.",
+      "looks": ["everyday", "office", "festive", "glam"], "optional_in_looks": [],
+      "techniques": {
+        "default": "Draw a line along the upper lash line from the outer corner inward, in short connected strokes.",
+        "liquid": "Rest your elbow on a surface and draw short connected strokes along the upper lash line, outer corner first.",
+        "pencil": "Draw along the upper lash line and smudge slightly with a small brush for a softer finish.",
+        "gel": "Use a fine angled brush to press the liner along the upper lash line in short strokes."
+      },
+      "cautions": ["Avoid the inner waterline if your eyes are sensitive."]
+    },
+    {
+      "step_id": "mascara", "category": "mascara", "title": "Define the lashes", "sequence": 120,
+      "purpose": "Lifts and defines the lashes.",
+      "looks": ["everyday", "office", "festive", "glam"], "optional_in_looks": [],
+      "techniques": {
+        "default": "Wiggle the wand at the lash roots, then sweep upward to the tips.",
+        "liquid": "Wipe excess from the wand, wiggle it at the roots and sweep up to the tips; repeat once if desired."
+      },
+      "cautions": ["Replace mascara regularly and do not share it."]
+    },
+    {
+      "step_id": "lip_liner", "category": "lip_liner", "title": "Line the lips", "sequence": 130,
+      "purpose": "Defines the lip shape and helps lip colour stay in place.",
+      "looks": ["everyday", "office", "festive", "glam"], "optional_in_looks": ["everyday", "office"],
+      "techniques": {
+        "default": "Trace your natural lip line in short strokes, starting at the centre of the upper lip.",
+        "pencil": "Trace your natural lip line in short strokes, starting at the centre of the upper lip and working outward."
+      },
+      "cautions": []
+    },
+    {
+      "step_id": "lipstick", "category": "lipstick", "title": "Apply lip colour", "sequence": 140,
+      "purpose": "Adds colour to complete the look.",
+      "looks": ["everyday", "office", "festive", "glam"], "optional_in_looks": [],
+      "techniques": {
+        "default": "Apply from the centre of the lips outward, following your natural lip line.",
+        "stick": "Apply from the centre outward, then press the lips together to even the colour.",
+        "liquid": "Apply a thin layer from the centre outward and avoid pressing the lips together until it settles."
+      },
+      "cautions": []
+    },
+    {
+      "step_id": "setting_spray", "category": "setting_spray", "title": "Finish and set", "sequence": 150,
+      "purpose": "Melts powder layers together and can help the look last.",
+      "looks": ["everyday", "office", "festive", "glam"], "optional_in_looks": ["everyday", "office"],
+      "techniques": {
+        "default": "Hold the bottle at arm's length, close your eyes and mist the face in an X and T pattern.",
+        "spray": "Hold the bottle at arm's length, close your eyes and mist the face in an X and T pattern; let it dry without touching."
+      },
+      "cautions": ["Keep your eyes closed while spraying."]
+    }
+  ],
+  "rules": [
+    {"rule_id": "R-FND-LIGHT", "step_id": "foundation", "kind": "look", "looks": ["everyday", "office"], "conditions": {}, "requires_steps": [], "instruction": "Keep the layer thin and concentrate it where you want coverage, letting it fade toward the edges of the face.", "priority": 40, "exclusive_group": "foundation_look", "optional": false, "cautions": [], "rationale": "Lighter looks typically use less product."},
+    {"rule_id": "R-FND-BUILD", "step_id": "foundation", "kind": "look", "looks": ["festive", "glam"], "conditions": {}, "requires_steps": [], "instruction": "For more coverage, build a second thin layer only where needed rather than applying one thick layer.", "priority": 40, "exclusive_group": "foundation_look", "optional": false, "cautions": [], "rationale": "Thin layers usually look smoother than one heavy layer."},
+    {"rule_id": "R-FND-COVER-FULL", "step_id": "foundation", "kind": "preference", "looks": null, "conditions": {"coverage": ["full"]}, "requires_steps": [], "instruction": "Because you prefer full coverage, press (stipple) the product in instead of sweeping it.", "priority": 50, "exclusive_group": "foundation_coverage", "optional": false, "cautions": [], "rationale": "Pressing deposits more product than sweeping."},
+    {"rule_id": "R-FND-COVER-LIGHT", "step_id": "foundation", "kind": "preference", "looks": null, "conditions": {"coverage": ["light"]}, "requires_steps": [], "instruction": "Because you prefer light coverage, sheer the product out with a damp sponge.", "priority": 50, "exclusive_group": "foundation_coverage", "optional": false, "cautions": [], "rationale": "A damp sponge lifts excess product."},
+    {"rule_id": "R-CON-BEFORE", "step_id": "concealer", "kind": "preference", "looks": null, "conditions": {"concealer_order": ["before_foundation"]}, "requires_steps": ["foundation"], "instruction": "Because concealer goes on before foundation in your routine, use a light hand; the foundation will add coverage on top. Blend foundation over it with pressing motions so it is not wiped away.", "priority": 50, "exclusive_group": "concealer_order", "optional": false, "cautions": [], "rationale": "Concealer-first workflows rely on foundation to blend edges."},
+    {"rule_id": "R-CON-AFTER", "step_id": "concealer", "kind": "preference", "looks": null, "conditions": {"concealer_order": ["after_foundation"]}, "requires_steps": ["foundation"], "instruction": "Apply concealer only where foundation has not already given enough coverage.", "priority": 50, "exclusive_group": "concealer_order", "optional": false, "cautions": [], "rationale": "Foundation often reduces how much concealer is needed."},
+    {"rule_id": "R-CON-OVER-CORRECTOR", "step_id": "concealer", "kind": "look", "looks": null, "conditions": {}, "requires_steps": ["color_corrector"], "instruction": "Tap concealer over the corrected areas without rubbing so the corrector stays in place.", "priority": 30, "exclusive_group": null, "optional": false, "cautions": [], "rationale": "Rubbing moves the corrector layer."},
+    {"rule_id": "R-PWD-OFFICE", "step_id": "powder", "kind": "look", "looks": ["office", "glam"], "conditions": {}, "requires_steps": [], "instruction": "Pay attention to the T-zone and under the eyes, where shine and creasing tend to appear first over long wear.", "priority": 40, "exclusive_group": null, "optional": false, "cautions": [], "rationale": "Long-wear looks benefit from targeted setting."},
+    {"rule_id": "R-ESH-OFFICE", "step_id": "eyeshadow", "kind": "look", "looks": ["office"], "conditions": {}, "requires_steps": [], "instruction": "Keep to one or two softer shades and blend the edges well for an understated finish.", "priority": 40, "exclusive_group": "eyeshadow_look", "optional": false, "cautions": [], "rationale": "Understated looks use fewer, softer shades."},
+    {"rule_id": "R-ESH-EVERYDAY", "step_id": "eyeshadow", "kind": "look", "looks": ["everyday"], "conditions": {}, "requires_steps": [], "instruction": "A single wash of colour across the lid is enough; blend the top edge.", "priority": 40, "exclusive_group": "eyeshadow_look", "optional": false, "cautions": [], "rationale": "Quick daily looks."},
+    {"rule_id": "R-ESH-FESTIVE", "step_id": "eyeshadow", "kind": "look", "looks": ["festive"], "conditions": {}, "requires_steps": [], "instruction": "Add a shimmer or brighter shade to the centre of the lid for a festive touch.", "priority": 40, "exclusive_group": "eyeshadow_look", "optional": false, "cautions": [], "rationale": "Shine reads well at celebrations."},
+    {"rule_id": "R-ESH-GLAM", "step_id": "eyeshadow", "kind": "look", "looks": ["glam"], "conditions": {}, "requires_steps": [], "instruction": "Deepen the outer corner and crease, and build intensity in layers. In this look eyes are done before foundation so you can clean away any fallout first.", "priority": 40, "exclusive_group": "eyeshadow_look", "optional": false, "cautions": [], "rationale": "Doing eyes first lets fallout be removed before the base."},
+    {"rule_id": "R-LNR-OFFICE", "step_id": "eyeliner", "kind": "look", "looks": ["everyday", "office"], "conditions": {}, "requires_steps": [], "instruction": "Keep the line thin and close to the lashes.", "priority": 40, "exclusive_group": "eyeliner_look", "optional": false, "cautions": [], "rationale": "Subtle definition."},
+    {"rule_id": "R-LNR-FESTIVE", "step_id": "eyeliner", "kind": "look", "looks": ["festive"], "conditions": {}, "requires_steps": [], "instruction": "Smudge the line slightly toward the outer corner for a softer, smoky edge.", "priority": 40, "exclusive_group": "eyeliner_look", "optional": false, "cautions": [], "rationale": "Softer definition with more presence."},
+    {"rule_id": "R-LNR-GLAM", "step_id": "eyeliner", "kind": "look", "looks": ["glam"], "conditions": {}, "requires_steps": [], "instruction": "Extend the outer end into a small wing, angled toward the end of your brow.", "priority": 40, "exclusive_group": "eyeliner_look", "optional": false, "cautions": [], "rationale": "Defined evening look."},
+    {"rule_id": "R-MSC-GLAM", "step_id": "mascara", "kind": "look", "looks": ["festive", "glam"], "conditions": {}, "requires_steps": [], "instruction": "Apply a second coat once the first has set slightly, combing through any clumps.", "priority": 40, "exclusive_group": null, "optional": false, "cautions": [], "rationale": "More definition for evening looks."},
+    {"rule_id": "R-LIP-OFFICE", "step_id": "lipstick", "kind": "look", "looks": ["office"], "conditions": {}, "requires_steps": [], "instruction": "Blot once with a tissue for a softer finish that lasts through the day.", "priority": 40, "exclusive_group": "lipstick_look", "optional": false, "cautions": [], "rationale": "Blotting removes excess product."},
+    {"rule_id": "R-LIP-GLAM", "step_id": "lipstick", "kind": "look", "looks": ["glam"], "conditions": {}, "requires_steps": [], "instruction": "Apply, blot, then apply a second layer for longer wear.", "priority": 40, "exclusive_group": "lipstick_look", "optional": false, "cautions": [], "rationale": "Layering improves longevity."},
+    {"rule_id": "R-LIP-WITH-LINER", "step_id": "lipstick", "kind": "look", "looks": ["festive", "glam"], "conditions": {}, "requires_steps": ["lip_liner"], "instruction": "Lightly fill the lips with your liner first so the colour wears more evenly.", "priority": 30, "exclusive_group": null, "optional": true, "cautions": [], "rationale": "Liner underneath acts as a base."},
+    {"rule_id": "R-BLU-SOFT", "step_id": "blush", "kind": "preference", "looks": null, "conditions": {"intensity": ["soft"]}, "requires_steps": [], "instruction": "You prefer a soft result: start with very little and build gradually.", "priority": 30, "exclusive_group": "blush_intensity", "optional": false, "cautions": [], "rationale": "Preference."},
+    {"rule_id": "R-BLU-BOLD", "step_id": "blush", "kind": "preference", "looks": null, "conditions": {"intensity": ["bold"]}, "requires_steps": [], "instruction": "You prefer a bolder result: build a second layer once the first is blended.", "priority": 30, "exclusive_group": "blush_intensity", "optional": false, "cautions": [], "rationale": "Preference."},
+
+    {"rule_id": "F-BLU-ROUND", "step_id": "blush", "kind": "feature", "looks": null, "conditions": {"face_shape": ["round"]}, "requires_steps": [], "instruction": "A common approach for round faces: apply slightly above the apples of the cheeks and blend up toward the temples.", "priority": 50, "exclusive_group": "blush_placement", "optional": false, "cautions": [], "rationale": "Angled placement is commonly used to add length."},
+    {"rule_id": "F-BLU-OVAL", "step_id": "blush", "kind": "feature", "looks": null, "conditions": {"face_shape": ["oval"]}, "requires_steps": [], "instruction": "A common approach for oval faces: apply to the apples of the cheeks and blend back along the cheekbone.", "priority": 50, "exclusive_group": "blush_placement", "optional": false, "cautions": [], "rationale": "Follows the natural cheek structure."},
+    {"rule_id": "F-BLU-SQUARE", "step_id": "blush", "kind": "feature", "looks": null, "conditions": {"face_shape": ["square"]}, "requires_steps": [], "instruction": "A common approach for square faces: apply to the apples in a soft circular motion.", "priority": 50, "exclusive_group": "blush_placement", "optional": false, "cautions": [], "rationale": "Rounded placement is commonly used to soften angles."},
+    {"rule_id": "F-BLU-HEART", "step_id": "blush", "kind": "feature", "looks": null, "conditions": {"face_shape": ["heart"]}, "requires_steps": [], "instruction": "A common approach for heart-shaped faces: apply just below the cheekbones and blend outward, keeping colour away from the temples.", "priority": 50, "exclusive_group": "blush_placement", "optional": false, "cautions": [], "rationale": "Keeps emphasis away from the wider upper face."},
+    {"rule_id": "F-BLU-OBLONG", "step_id": "blush", "kind": "feature", "looks": null, "conditions": {"face_shape": ["oblong"]}, "requires_steps": [], "instruction": "A common approach for longer faces: apply horizontally across the apples toward the ears.", "priority": 50, "exclusive_group": "blush_placement", "optional": false, "cautions": [], "rationale": "Horizontal placement is commonly used to add width."},
+    {"rule_id": "F-BRZ-ROUND", "step_id": "bronzer", "kind": "feature", "looks": null, "conditions": {"face_shape": ["round"]}, "requires_steps": [], "instruction": "A common approach for round faces: sweep bronzer along the temples and just under the cheekbones for definition.", "priority": 50, "exclusive_group": "bronzer_placement", "optional": false, "cautions": [], "rationale": "Adds shadow under the cheekbone."},
+    {"rule_id": "F-BRZ-OVAL", "step_id": "bronzer", "kind": "feature", "looks": null, "conditions": {"face_shape": ["oval"]}, "requires_steps": [], "instruction": "A common approach for oval faces: apply where the sun would naturally hit — forehead, cheekbones and the bridge of the nose.", "priority": 50, "exclusive_group": "bronzer_placement", "optional": false, "cautions": [], "rationale": "Natural warmth placement."},
+    {"rule_id": "F-BRZ-SQUARE", "step_id": "bronzer", "kind": "feature", "looks": null, "conditions": {"face_shape": ["square"]}, "requires_steps": [], "instruction": "A common approach for square faces: lightly soften the temples and the corners of the jaw.", "priority": 50, "exclusive_group": "bronzer_placement", "optional": false, "cautions": [], "rationale": "Softens angular corners."},
+    {"rule_id": "F-BRZ-HEART", "step_id": "bronzer", "kind": "feature", "looks": null, "conditions": {"face_shape": ["heart"]}, "requires_steps": [], "instruction": "A common approach for heart-shaped faces: apply lightly along the temples and under the cheekbones.", "priority": 50, "exclusive_group": "bronzer_placement", "optional": false, "cautions": [], "rationale": "Balances a wider upper face."},
+    {"rule_id": "F-BRZ-OBLONG", "step_id": "bronzer", "kind": "feature", "looks": null, "conditions": {"face_shape": ["oblong"]}, "requires_steps": [], "instruction": "A common approach for longer faces: apply lightly along the hairline and under the jaw.", "priority": 50, "exclusive_group": "bronzer_placement", "optional": false, "cautions": [], "rationale": "Commonly used to visually shorten the face."},
+    {"rule_id": "F-LNR-ALMOND", "step_id": "eyeliner", "kind": "feature", "looks": null, "conditions": {"eye_shape": ["almond"]}, "requires_steps": [], "instruction": "For almond-shaped eyes most liner styles work; follow the lash line and extend slightly at the outer corner.", "priority": 50, "exclusive_group": "eyeliner_shape", "optional": false, "cautions": [], "rationale": "Balanced proportions suit many styles."},
+    {"rule_id": "F-LNR-ROUND", "step_id": "eyeliner", "kind": "feature", "looks": null, "conditions": {"eye_shape": ["round"]}, "requires_steps": [], "instruction": "For rounder eyes, thicken the line toward the outer corner and extend it slightly outward to elongate.", "priority": 50, "exclusive_group": "eyeliner_shape", "optional": false, "cautions": [], "rationale": "Horizontal emphasis elongates."},
+    {"rule_id": "F-LNR-HOODED", "step_id": "eyeliner", "kind": "feature", "looks": null, "conditions": {"eye_shape": ["hooded"]}, "requires_steps": [], "instruction": "For hooded eyes, keep the line thin and close to the lashes, and draw any wing with your eyes open so it stays visible.", "priority": 50, "exclusive_group": "eyeliner_shape", "optional": false, "cautions": [], "rationale": "A lid fold can hide liner drawn with eyes closed."},
+    {"rule_id": "F-LNR-MONOLID", "step_id": "eyeliner", "kind": "feature", "looks": null, "conditions": {"eye_shape": ["monolid"]}, "requires_steps": [], "instruction": "For monolids, a slightly thicker line is often needed for it to show with the eyes open; build it gradually.", "priority": 50, "exclusive_group": "eyeliner_shape", "optional": false, "cautions": [], "rationale": "Thin lines can disappear when eyes are open."},
+    {"rule_id": "F-LNR-DOWNTURNED", "step_id": "eyeliner", "kind": "feature", "looks": null, "conditions": {"eye_tilt": ["downturned"]}, "requires_steps": [], "instruction": "For a downturned outer corner, angle the end of the line slightly upward instead of following the lower lash line.", "priority": 50, "exclusive_group": "eyeliner_tilt", "optional": false, "cautions": [], "rationale": "Commonly used to lift the outer corner."},
+    {"rule_id": "F-LNR-UPTURNED", "step_id": "eyeliner", "kind": "feature", "looks": null, "conditions": {"eye_tilt": ["upturned"]}, "requires_steps": [], "instruction": "For an upturned outer corner, a little liner smudged along the outer lower lash line can balance the shape.", "priority": 50, "exclusive_group": "eyeliner_tilt", "optional": true, "cautions": [], "rationale": "Balances upward emphasis."},
+    {"rule_id": "F-ESH-HOODED", "step_id": "eyeshadow", "kind": "feature", "looks": null, "conditions": {"eye_shape": ["hooded"]}, "requires_steps": [], "instruction": "For hooded eyes, place the crease shade slightly above your natural crease with your eyes open so it remains visible.", "priority": 50, "exclusive_group": "eyeshadow_shape", "optional": false, "cautions": [], "rationale": "Colour in the natural crease can be hidden."},
+    {"rule_id": "F-ESH-ROUND", "step_id": "eyeshadow", "kind": "feature", "looks": null, "conditions": {"eye_shape": ["round"]}, "requires_steps": [], "instruction": "For rounder eyes, concentrate deeper shades on the outer third and blend outward.", "priority": 50, "exclusive_group": "eyeshadow_shape", "optional": false, "cautions": [], "rationale": "Outer emphasis elongates."},
+    {"rule_id": "F-ESH-ALMOND", "step_id": "eyeshadow", "kind": "feature", "looks": null, "conditions": {"eye_shape": ["almond"]}, "requires_steps": [], "instruction": "For almond-shaped eyes, most placements work; a deeper shade in the crease adds definition.", "priority": 50, "exclusive_group": "eyeshadow_shape", "optional": false, "cautions": [], "rationale": "Balanced proportions."},
+    {"rule_id": "F-ESH-MONOLID", "step_id": "eyeshadow", "kind": "feature", "looks": null, "conditions": {"eye_shape": ["monolid"]}, "requires_steps": [], "instruction": "For monolids, blend colour in a gradient upward from the lash line rather than relying on a crease.", "priority": 50, "exclusive_group": "eyeshadow_shape", "optional": false, "cautions": [], "rationale": "Gradient placement adds depth without a crease."},
+    {"rule_id": "F-MSC-HOODED", "step_id": "mascara", "kind": "feature", "looks": null, "conditions": {"eye_shape": ["hooded"]}, "requires_steps": [], "instruction": "For hooded eyes, focus on lifting at the roots; let the mascara dry before opening your eyes fully to reduce transfer onto the lid.", "priority": 50, "exclusive_group": "mascara_shape", "optional": false, "cautions": [], "rationale": "Reduces transfer onto the lid fold."}
+  ],
+  "ordering": [
+    {"constraint_id": "O-001", "before": "skin_prep", "after": "primer", "when": null, "rationale": "Skincare first so primer sits on absorbed skin."},
+    {"constraint_id": "O-002", "before": "primer", "after": "color_corrector", "when": null, "rationale": "Primer is the first makeup layer."},
+    {"constraint_id": "O-003", "before": "color_corrector", "after": "foundation", "when": null, "rationale": "Correct discolouration first so foundation can even it out."},
+    {"constraint_id": "O-004", "before": "color_corrector", "after": "concealer", "when": null, "rationale": "Concealer goes over the corrector."},
+    {"constraint_id": "O-005", "before": "foundation", "after": "concealer", "when": {"concealer_order": ["after_foundation"]}, "rationale": "Default: conceal only what foundation did not cover."},
+    {"constraint_id": "O-006", "before": "concealer", "after": "foundation", "when": {"concealer_order": ["before_foundation"]}, "rationale": "User preference: concealer first."},
+    {"constraint_id": "O-007", "before": "foundation", "after": "powder", "when": null, "rationale": "Powder sets liquid and cream layers."},
+    {"constraint_id": "O-008", "before": "concealer", "after": "powder", "when": null, "rationale": "Powder sets concealer."},
+    {"constraint_id": "O-009", "before": "foundation", "after": "bronzer", "when": null, "rationale": "Colour goes over the base."},
+    {"constraint_id": "O-010", "before": "foundation", "after": "blush", "when": null, "rationale": "Colour goes over the base."},
+    {"constraint_id": "O-011", "before": "foundation", "after": "highlighter", "when": null, "rationale": "Highlight goes over the base."},
+    {"constraint_id": "O-012", "before": "bronzer", "after": "powder", "when": {"formulation": {"bronzer": ["cream", "liquid", "stick", "gel", "balm"]}}, "rationale": "Cream and liquid products go under powder."},
+    {"constraint_id": "O-013", "before": "powder", "after": "bronzer", "when": {"formulation": {"bronzer": ["powder"]}}, "rationale": "Powder over unset liquid can look patchy."},
+    {"constraint_id": "O-014", "before": "blush", "after": "powder", "when": {"formulation": {"blush": ["cream", "liquid", "stick", "gel", "balm"]}}, "rationale": "Cream and liquid products go under powder."},
+    {"constraint_id": "O-015", "before": "powder", "after": "blush", "when": {"formulation": {"blush": ["powder"]}}, "rationale": "Powder blush blends best over set skin."},
+    {"constraint_id": "O-016", "before": "highlighter", "after": "powder", "when": {"formulation": {"highlighter": ["cream", "liquid", "stick", "gel", "balm"]}}, "rationale": "Cream and liquid products go under powder."},
+    {"constraint_id": "O-017", "before": "powder", "after": "highlighter", "when": {"formulation": {"highlighter": ["powder"]}}, "rationale": "Powder highlighter goes over set skin."},
+    {"constraint_id": "O-018", "before": "foundation", "after": "eyebrow", "when": null, "rationale": "Brows after base so foundation does not smudge them."},
+    {"constraint_id": "O-019", "before": "powder", "after": "eyeshadow", "when": {"look": ["everyday", "office", "festive"]}, "rationale": "Default: complexion first, then eyes."},
+    {"constraint_id": "O-020", "before": "eyeshadow", "after": "foundation", "when": {"look": ["glam"]}, "rationale": "Glam: eyes first so eyeshadow fallout can be cleaned before the base."},
+    {"constraint_id": "O-021", "before": "primer", "after": "eyeshadow", "when": null, "rationale": "Primer is the first makeup layer."},
+    {"constraint_id": "O-022", "before": "eyeshadow", "after": "eyeliner", "when": null, "rationale": "Liner defines the lash line after shadow."},
+    {"constraint_id": "O-023", "before": "eyeliner", "after": "mascara", "when": null, "rationale": "Mascara last on the eyes so liner can sit at the lash roots."},
+    {"constraint_id": "O-024", "before": "lip_liner", "after": "lipstick", "when": null, "rationale": "Liner defines the shape before colour."},
+    {"constraint_id": "O-025", "before": "powder", "after": "setting_spray", "when": null, "rationale": "Setting spray is the final step."},
+    {"constraint_id": "O-026", "before": "lipstick", "after": "setting_spray", "when": null, "rationale": "Setting spray is the final step."},
+    {"constraint_id": "O-027", "before": "mascara", "after": "setting_spray", "when": null, "rationale": "Setting spray is the final step."},
+    {"constraint_id": "O-028", "before": "eyebrow", "after": "setting_spray", "when": null, "rationale": "Setting spray is the final step."},
+    {"constraint_id": "O-029", "before": "blush", "after": "setting_spray", "when": null, "rationale": "Setting spray is the final step."},
+    {"constraint_id": "O-030", "before": "bronzer", "after": "setting_spray", "when": null, "rationale": "Setting spray is the final step."},
+    {"constraint_id": "O-031", "before": "highlighter", "after": "setting_spray", "when": null, "rationale": "Setting spray is the final step."}
+  ],
+  "compatibility": [
+    {"compat_id": "C-001", "steps": ["primer", "foundation"], "bases": ["silicone", "water"], "note": "Your primer is listed as silicone-based and your foundation as water-based. Some people find this pairing can pill; apply both in thin layers and let the primer set for a minute."},
+    {"compat_id": "C-002", "steps": ["primer", "foundation"], "bases": ["water", "silicone"], "note": "Your primer is listed as water-based and your foundation as silicone-based. Some people find this pairing can pill; apply both in thin layers and let the primer set for a minute."},
+    {"compat_id": "C-003", "steps": ["primer", "foundation"], "bases": ["oil", "water"], "note": "Your primer is listed as oil-based and your foundation as water-based; let the primer absorb fully so the foundation does not slide."}
+  ],
+  "suggestions": [
+    {"suggestion_id": "S-001", "step_id": "setting_spray", "looks": ["festive", "glam"], "text": "Optional suggestion: a setting spray can help the look last through a long event. You do not have one in your inventory."},
+    {"suggestion_id": "S-002", "step_id": "primer", "looks": ["festive", "glam"], "text": "Optional suggestion: a primer can help makeup wear longer. You do not have one in your inventory."},
+    {"suggestion_id": "S-003", "step_id": "powder", "looks": ["office", "glam"], "text": "Optional suggestion: a light setting powder can reduce shine over long wear. You do not have one in your inventory."},
+    {"suggestion_id": "S-004", "step_id": "lip_liner", "looks": ["glam"], "text": "Optional suggestion: a lip liner can help bold lip colour stay defined. You do not have one in your inventory."},
+    {"suggestion_id": "S-005", "step_id": "mascara", "looks": ["everyday", "office", "festive", "glam"], "text": "Optional suggestion: mascara is a quick way to define the eyes. You do not have one in your inventory."}
+  ]
+}

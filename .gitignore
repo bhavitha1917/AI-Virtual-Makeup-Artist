@@ -1,0 +1,33 @@
+# Environments and secrets
+.venv/
+venv/
+.env
+.env.*
+.streamlit/secrets.toml
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Model assets (downloaded via scripts/download_model.py)
+models/*.task
+models/*.part
+
+# Personal / sample images — never commit faces
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.heic
+!assets/**/*.svg
+# Welcome-page background (a design asset, not user data)
+!assets/welcome_beauty_studio.png
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
