@@ -100,9 +100,14 @@ class MediaPipeFaceLandmarker:
         try:
             self._landmarker = vision.FaceLandmarker.create_from_options(options)
         except Exception as exc:  # MediaPipe raises RuntimeError/ValueError variants
+            # On Linux the native library is loaded here via ctypes; a missing system
+            # library (e.g. libEGL.so.1, libGLESv2.so.2) surfaces as an OSError.
+            details = f"{type(exc).__name__}: {exc}"
+            if isinstance(exc, OSError) and ".so" in str(exc):
+                details += " (missing system library; check packages.txt)"
             raise ModelUnavailableError(
                 "model_load_failed", "The face-analysis model could not be loaded.",
-                details=str(exc)) from exc
+                details=details) from exc
         self._lock = threading.Lock()
 
     def detect(self, rgb: np.ndarray) -> list[FaceLandmarks]:

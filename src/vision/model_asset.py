@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import dataclasses
 import hashlib
 import logging
 import os
@@ -15,6 +16,8 @@ from src.core.errors import ModelUnavailableError
 logger = logging.getLogger(__name__)
 
 SETUP_HINT = "Run `python scripts/download_model.py` from the project folder, then reload."
+# Used when the project's models/ folder is read-only (some hosts mount the repo read-only).
+FALLBACK_DIR = Path(tempfile.gettempdir()) / "beauty_studio"
 
 
 def sha256_of(path: Path) -> str:
@@ -28,9 +31,16 @@ def sha256_of(path: Path) -> str:
 def download_model(settings: ModelSettings = SETTINGS.model) -> Path:
     """Download the pinned model to ``settings.path`` atomically after verifying SHA-256."""
     target = settings.path
-    target.parent.mkdir(parents=True, exist_ok=True)
-    logger.info("Downloading face landmarker model from %s", settings.url)
-    fd, tmp_name = tempfile.mkstemp(dir=target.parent, suffix=".part")
+    try:
+        target.parent.mkdir(parents=True, exist_ok=True)
+        fd, tmp_name = tempfile.mkstemp(dir=target.parent, suffix=".part")
+    except OSError as exc:
+        raise ModelUnavailableError(
+            "model_dir_not_writable",
+            "The face-analysis model could not be saved on this server.",
+            details=f"{type(exc).__name__}: {exc}",
+        ) from exc
+    logger.info("Downloading face landmarker model from %s to %s", settings.url, target)
     tmp = Path(tmp_name)
     try:
         with os.fdopen(fd, "wb") as out, urllib.request.urlopen(  # noqa: S310 - pinned https URL
@@ -58,7 +68,7 @@ def download_model(settings: ModelSettings = SETTINGS.model) -> Path:
         raise ModelUnavailableError(
             "model_download_failed",
             "The face-analysis model could not be downloaded. " + SETUP_HINT,
-            details=str(exc),
+            details=f"{type(exc).__name__}: {exc}",
         ) from exc
     finally:
         if tmp.exists():
@@ -66,7 +76,10 @@ def download_model(settings: ModelSettings = SETTINGS.model) -> Path:
 
 
 def ensure_model(settings: ModelSettings = SETTINGS.model) -> Path:
-    """Return a verified model path, downloading it if allowed and missing."""
+    """Return a verified model path, downloading it if allowed and missing.
+
+    Falls back to ``FALLBACK_DIR`` when the configured folder is not writable.
+    """
     path = settings.path
     if path.is_file():
         if sha256_of(path) == settings.sha256:
@@ -76,7 +89,17 @@ def ensure_model(settings: ModelSettings = SETTINGS.model) -> Path:
             "The face-analysis model file is corrupted or not the expected version. "
             "Delete it and " + SETUP_HINT[0].lower() + SETUP_HINT[1:],
         )
+    fallback = dataclasses.replace(settings, path=FALLBACK_DIR / path.name)
+    if fallback.path.is_file() and sha256_of(fallback.path) == settings.sha256:
+        return fallback.path
     if not settings.allow_download:
         raise ModelUnavailableError(
             "model_missing", "The face-analysis model is not installed. " + SETUP_HINT)
-    return download_model(settings)
+    try:
+        return download_model(settings)
+    except ModelUnavailableError as exc:
+        if exc.code != "model_dir_not_writable":
+            raise
+        logger.warning("model folder not writable (%s); using %s", exc.details,
+                       fallback.path.parent)
+    return download_model(fallback)

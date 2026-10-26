@@ -182,3 +182,23 @@ def test_routine_uses_confirmed_features():
     next(b for b in at.button if b.label == "Generate my routine").click().run()
     no_errors(at)
     assert "For your features" in all_html(at)
+
+
+def test_model_failure_is_logged_and_shown_as_friendly_error(monkeypatch, caplog):
+    import src.ui.navigation  # noqa: F401  (page modules import via navigation)
+    from src.core.errors import ModelUnavailableError
+    from src.ui.pages import face_analysis
+
+    def unavailable():
+        raise ModelUnavailableError("model_load_failed",
+                                    "The face-analysis model could not be loaded.",
+                                    details="OSError: libEGL.so.1: cannot open shared object file")
+
+    monkeypatch.setattr(face_analysis, "get_detector", unavailable)
+    ss: dict = {}
+    with caplog.at_level("ERROR", logger=face_analysis.__name__):
+        face_analysis._run_analysis(ss, b"image-bytes", "fp")
+    assert "model_load_failed: OSError: libEGL.so.1" in caplog.text
+    err = state.get_analysis_error(ss, "fp")
+    assert err["message"] == "The face-analysis model could not be loaded."
+    assert "libEGL" not in err["message"]

@@ -327,7 +327,7 @@ Model-dependent tests skip with an explicit message if `models/face_landmarker.t
 
 ## 26. Deployment
 
-Target: **Streamlit Community Cloud** (free; Python 3.11 selectable). Push the repository to GitHub, create an app pointing to `app.py`, choose Python 3.11. `packages.txt` installs the system libraries MediaPipe's OpenCV dependency needs; the model downloads on first analysis. Full steps and alternatives (Docker / any VM): `docs/DEPLOYMENT.md`.
+Target: **Streamlit Community Cloud** (free; Python 3.11 selectable). Push the repository to GitHub, create an app pointing to `app.py`, choose Python 3.11. `packages.txt` installs the system libraries OpenCV and MediaPipe's native library need (`libgl1`, `libglib2.0-0`, `libegl1`, `libgles2`); the model downloads on first analysis. Full steps and alternatives (Docker / any VM): `docs/DEPLOYMENT.md`.
 
 ## 27. Known limitations
 

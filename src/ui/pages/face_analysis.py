@@ -60,6 +60,8 @@ def _run_analysis(ss, data: bytes, fingerprint: str) -> None:
     try:
         detector = get_detector()
     except ModelUnavailableError as exc:
+        # Details hold exception text only (paths, library names, HTTP errors), never image data.
+        logger.error("face-analysis model unavailable: %s: %s", exc.code, exc.details)
         state.set_analysis_error(ss, fingerprint, exc.code, exc.user_message)
         return
     with st.status("Analyzing your photo…", expanded=False) as status:

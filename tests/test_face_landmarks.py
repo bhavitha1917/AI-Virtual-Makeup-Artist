@@ -65,3 +65,30 @@ def test_real_model_rejects_wrong_dtype(model_path):
             detector.detect(np.zeros((10, 10), np.float32))
     finally:
         detector.close()
+
+
+def test_missing_linux_system_library_is_reported_as_model_load_failed(model_path, monkeypatch):
+    """Regression: on Linux, MediaPipe loads libmediapipe.so (which needs libEGL.so.1 and
+    libGLESv2.so.2) inside create_from_options; a missing library must be diagnosable."""
+    from mediapipe.tasks.python import vision
+
+    from src.core.errors import ModelUnavailableError
+
+    def missing_lib(options):
+        raise OSError("libEGL.so.1: cannot open shared object file: No such file or directory")
+
+    monkeypatch.setattr(vision.FaceLandmarker, "create_from_options", missing_lib)
+    with pytest.raises(ModelUnavailableError) as exc:
+        MediaPipeFaceLandmarker(model_path)
+    assert exc.value.code == "model_load_failed"
+    assert exc.value.details.startswith("OSError: libEGL.so.1")
+    assert "packages.txt" in exc.value.details
+
+
+def test_packages_txt_lists_mediapipe_linux_runtime_libraries():
+    """libmediapipe.so (mediapipe 1.1.1, manylinux) links libEGL.so.1 and libGLESv2.so.2;
+    OpenCV needs libGL and GLib. Streamlit Community Cloud installs these from packages.txt."""
+    from tests.conftest import ROOT
+
+    packages = set((ROOT / "packages.txt").read_text(encoding="utf-8").split())
+    assert {"libegl1", "libgles2", "libgl1", "libglib2.0-0"} <= packages

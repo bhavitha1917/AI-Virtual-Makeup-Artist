@@ -1,5 +1,6 @@
 import hashlib
 import io
+from pathlib import Path
 
 import pytest
 
@@ -74,3 +75,37 @@ def test_installed_model_matches_pinned_checksum(model_path):
     from src.config import SETTINGS
 
     assert model_asset.sha256_of(model_path) == SETTINGS.model.sha256
+
+
+def test_unwritable_model_dir_falls_back_to_temp(tmp_path, monkeypatch):
+    monkeypatch.setattr(model_asset, "FALLBACK_DIR", tmp_path / "fallback")
+    monkeypatch.setattr(model_asset.urllib.request, "urlopen",
+                        lambda url, timeout: FakeResponse(PAYLOAD))
+    real_mkstemp = model_asset.tempfile.mkstemp
+
+    def mkstemp(dir, suffix):
+        if Path(dir) == tmp_path / "readonly":
+            raise PermissionError(13, "Permission denied", str(dir))
+        return real_mkstemp(dir=dir, suffix=suffix)
+
+    monkeypatch.setattr(model_asset.tempfile, "mkstemp", mkstemp)
+    s = settings(tmp_path, path=tmp_path / "readonly" / "m.task")
+    path = model_asset.ensure_model(s)
+    assert path == tmp_path / "fallback" / "m.task"
+    assert path.read_bytes() == PAYLOAD
+
+    def no_network(url, timeout):
+        raise AssertionError("verified fallback copy should be reused")
+
+    monkeypatch.setattr(model_asset.urllib.request, "urlopen", no_network)
+    assert model_asset.ensure_model(s) == path
+
+
+def test_network_error_details_name_the_exception(tmp_path, monkeypatch):
+    def boom(url, timeout):
+        raise TimeoutError("timed out")
+
+    monkeypatch.setattr(model_asset.urllib.request, "urlopen", boom)
+    with pytest.raises(ModelUnavailableError) as exc:
+        model_asset.ensure_model(settings(tmp_path))
+    assert exc.value.details == "TimeoutError: timed out"
