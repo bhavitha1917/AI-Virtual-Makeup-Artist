@@ -51,10 +51,11 @@ CORRECTION_LABELS = {CorrectionTarget.DARK_CIRCLES: "Under-eye darkness",
 
 def _select(label: str, options: Sequence[Enum], key: str, any_label: str = ANY,
             fmt=None) -> Enum | None:
+    # The enums are StrEnums, so "is it a str?" cannot tell them from the placeholder label.
     choice = st.selectbox(label, [any_label, *options], key=key,
-                          format_func=lambda v: v if isinstance(v, str) else
-                          (fmt(v) if fmt else human(v.value).capitalize()))
-    return None if isinstance(choice, str) else choice
+                          format_func=lambda v: (fmt(v) if fmt else human(v.value).capitalize())
+                          if isinstance(v, Enum) else v)
+    return choice if isinstance(choice, Enum) else None
 
 
 def _families(catalog: Catalog, category: Category) -> list[ColorFamily]:
@@ -121,6 +122,32 @@ def _filters(category: Category, catalog: Catalog) -> RecommendationPreferences:
                                      formulation=form)
 
 
+def _clear_filters(category: Category) -> None:
+    """Form callback: drop this category's widget state so every control returns to its default."""
+    prefix = f"bs_sf_{category.value}_"
+    for key in [k for k in st.session_state if isinstance(k, str) and k.startswith(prefix)]:
+        del st.session_state[key]
+
+
+def _filter_form(category: Category, catalog: Catalog) -> RecommendationPreferences:
+    """Filters sit in a form, so selections only take effect when Apply Filters is pressed.
+
+    Inside a form, widgets report their last *submitted* values, which makes the returned
+    preferences the applied ones. The form is keyed by category, so switching category never
+    carries another category's selections over.
+    """
+    with st.form(f"bs_sf_form_{category.value}", border=False):
+        st.caption("Choose any combination, then press **Apply Filters** to update the results.")
+        prefs = _filters(category, catalog)
+        apply_col, clear_col = st.columns(2)
+        with apply_col:
+            st.form_submit_button("Apply Filters", type="primary", width="stretch")
+        with clear_col:
+            st.form_submit_button("Clear Filters", width="stretch",
+                                  on_click=_clear_filters, args=(category,))
+    return prefs
+
+
 def _eyeliner_technique(profile) -> None:
     usable = {n: profile.get(n).value for n in (EYE_SHAPE, EYE_TILT) if profile.get(n).usable}
     tips = feature_tips("eyeliner", usable, get_rules()) if usable else []
@@ -163,7 +190,7 @@ def render() -> None:
         "Product category", list(RECOMMENDABLE_CATEGORIES), default=Category.FOUNDATION,
         format_func=lambda c: CATEGORY_LABELS[c], key="bs_sf_category", required=True)
     category = category or Category.FOUNDATION
-    prefs = _filters(category, catalog)
+    prefs = _filter_form(category, catalog)
 
     if category in (Category.FOUNDATION, Category.CONCEALER):
         notice("<strong>Shade verification.</strong> " + e(FOUNDATION_DISCLAIMER), kind="warn")
